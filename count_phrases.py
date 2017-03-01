@@ -113,55 +113,55 @@ with gzip.open(args["<corpus>"], "rb") as fin:
             elapsed_mins = (time() - start_time) // 60
             print("Processed "+str(sentences_seen)+" sentences in "+str(elapsed_mins)+" minutes")
 
-with open(args["<output-dir>"]+"/an-vocab.txt", "w") as fout:
+with open(args["<output-dir>"]+"/an_vocab.txt", "w") as fout:
     for phrase, count in an_counts.most_common():
         if count < min_count:
             break
         fout.write(" ".join(phrase)+"\t"+str(count)+"\n")
 
-with open(args["<output-dir>"]+"/nn-vocab.txt", "w") as fout:
+with open(args["<output-dir>"]+"/nn_vocab.txt", "w") as fout:
     for phrase, count in nn_counts.most_common():
         if count < min_count:
             break
         fout.write(" ".join(phrase)+"\t"+str(count)+"\n")
 
-with open(args["<output-dir>"]+"/vs-vocab.txt", "w") as fout:
+with open(args["<output-dir>"]+"/vs_vocab.txt", "w") as fout:
     for phrase, count in vs_counts.most_common():
         if count < min_count:
             break
         fout.write(" ".join(phrase)+"\t"+str(count)+"\n")
 
-with open(args["<output-dir>"]+"/vo-vocab.txt", "w") as fout:
+with open(args["<output-dir>"]+"/vo_vocab.txt", "w") as fout:
     for phrase, count in vo_counts.most_common():
         if count < min_count:
             break
         fout.write(" ".join(phrase)+"\t"+str(count)+"\n")
 
-with open(args["<output-dir>"]+"/dn-vocab.txt", "w") as fout:
+with open(args["<output-dir>"]+"/dn_vocab.txt", "w") as fout:
     for phrase, count in dn_counts.most_common():
         if count < min_count:
             break
         fout.write(" ".join(phrase)+"\t"+str(count)+"\n")
 
-with open(args["<output-dir>"]+"/nvo-vocab.txt", "w") as fout:
+with open(args["<output-dir>"]+"/nvo_vocab.txt", "w") as fout:
     for phrase, count in nvo_counts.most_common():
         if count < min_count:
             break
         fout.write(" ".join(phrase)+"\t"+str(count)+"\n")
 
-with open(args["<output-dir>"]+"/nvs-vocab.txt", "w") as fout:
+with open(args["<output-dir>"]+"/nvs_vocab.txt", "w") as fout:
     for phrase, count in nvs_counts.most_common():
         if count < min_count:
             break
         fout.write(" ".join(phrase)+"\t"+str(count)+"\n")
 
-with open(args["<output-dir>"]+"/vpo-vocab.txt", "w") as fout:
+with open(args["<output-dir>"]+"/vpo_vocab.txt", "w") as fout:
     for phrase, count in vpo_counts.most_common():
         if count < min_count:
             break
         fout.write(" ".join(phrase)+"\t"+str(count)+"\n")
 
-with open(args["<output-dir>"]+"/vps-vocab.txt", "w") as fout:
+with open(args["<output-dir>"]+"/vps_vocab.txt", "w") as fout:
     for phrase, count in vps_counts.most_common():
         if count < min_count:
             break

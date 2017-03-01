@@ -1,6 +1,6 @@
 __pycache__
 *.npy
-vocabs*
-corpus*
+vocabs_*
+corpus_*
 *~
 *.so
