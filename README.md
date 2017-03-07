@@ -22,4 +22,6 @@ The Wikipedia dump or any of the resulting files are not included in this distri
 
 `index_corpus.py` produces an indexed version of the corpus. That is, it turns each word in the corpus into the corresponding vocabulary index. The output is a plain text file, where the first line contains the number of sentences in the corpus, and each subsequent line is a sentence, made up of space-separated word indices.
 
+`index_phrase_corpus.py` produces an indexed list of sentences containing a certain type of phrase. The output is a plain text file, where the first line contains the number of sentences, and each subsequent line represents a sentence. The first number in each sentence is the phrase id (indexed according to the phrase vocabulary) and the subsequent numbers are context ids (indexed according to the word vocabulary), sorted by increasing distance from the head of the phrase.
+
 `train_sgns.py` trains vectors using skip-gram with negative sampling, using the Cython code in `word2vec/`. You will need to make sure the Cython code has been compiled by running `make` inside `word2vec/`, and possibly editing the `Makefile` to match the correct paths on your system.

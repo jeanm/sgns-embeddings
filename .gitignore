@@ -1,6 +1,7 @@
 __pycache__
 *.npy
 vocabs_*
-corpus_*
+embeddings_*
+corpora_*
 *~
 *.so

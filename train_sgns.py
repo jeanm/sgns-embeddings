@@ -16,5 +16,5 @@ with open("vocabs_words/vocab.txt") as fin:
 
 w2v = Word2Vec(dev_data=dev_data, dimension=100)
 w2v.load_vocab(vocab, counts)
-embeddings, _, _ = w2v.train_sentences("corpus_words.txt", epochs=3)
+embeddings, _, _ = w2v.train_sentences("corpora_words/corpus.txt.gz", epochs=3)
 np.save("emb_100_words.npy", embeddings)

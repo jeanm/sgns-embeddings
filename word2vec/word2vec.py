@@ -5,6 +5,7 @@ import numpy as np
 from scipy.stats import spearmanr
 from scipy.spatial.distance import cosine
 from .word2vec_fast import train_sentence, train_single
+import gzip
 
 floatX = np.float32
 
@@ -108,7 +109,7 @@ class Word2Vec():
         work = np.zeros(self.dim, dtype=floatX)
         embeddings = np.ascontiguousarray((np.random.rand(len(self.index2name), self.dim) - 0.5) / self.dim,dtype=floatX)
         logger.info("initialised a %s x %s embedding matrix", len(self.index2name), self.dim)
-        with open(corpus_infile, "r") as fin:
+        with gzip.open(corpus_infile, "r") as fin:
             total_words = 0
             # read the number of sentences in the corpus
             corpus_sentences = int(next(fin).strip())
@@ -163,7 +164,7 @@ class Word2Vec():
         embeddings = np.ascontiguousarray((np.random.rand(vocabsize, self.dim) - 0.5) / self.dim,dtype=floatX)
         logger.info("initialised a %s x %s phrase embedding matrix", vocabsize, self.dim)
 
-        with open(corpus_infile, "r") as fin:
+        with gzip.open(corpus_infile, "r") as fin:
             total_words = 0
             # read the number of sentences in the corpus
             corpus_sentences = int(next(fin).strip())
