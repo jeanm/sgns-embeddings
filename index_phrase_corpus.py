@@ -125,7 +125,7 @@ def index(phrase_identifiers=["an"]):
                             ) + "\n"
                         )
                         phrases_added[phrase_identifier] += 1
-                sentences_seen += 1
+            sentences_seen += 1
 
             if sentences_seen % report_interval == 0:
                 elapsed_mins = (time() - start_time) // 60
